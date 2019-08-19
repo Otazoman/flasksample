@@ -1,2 +1,5 @@
 # flasksample
-flask sample app
+flask sample app  
+
+# useage
+sample
