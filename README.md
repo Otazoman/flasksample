@@ -1,5 +1,9 @@
 # flasksample
 flask sample app  
 
-# useage
-sample
+# useage  
+sample  
+
+# pip  
+pip install flask   
+
