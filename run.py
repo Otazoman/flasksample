@@ -23,6 +23,21 @@ def post_json():
     result = error_handler(e)
     return result
 
+@app.route('/api/<name>', methods=['GET'])
+def get_json(name):
+  try:
+    NAME = name
+    result = {
+      "data": {
+        "id": 1,
+        "name": NAME
+        }
+      }
+    return jsonify(result) 
+  except Exception as e:
+    result = error_handler(e)
+    return result
+
 @app.errorhandler(400)
 @app.errorhandler(404)
 @app.errorhandler(500)
