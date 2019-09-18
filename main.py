@@ -28,10 +28,11 @@ def search_data():
   try:
     data = request.data.decode('utf-8')
     data = json.loads(str(data))
-    k= [i for i in data.keys()]
-    v = [ j for j in data.values()]
+    keylist= [i for i in data.keys()]
+    valuelist = [ j for j in data.values()]
     query = client.query(kind="Task2")
-    query.add_filter(k[0], "=", v[0] )
+    for k,v in zip(keylist,valuelist):
+        query.add_filter(k, "=", v )
     result = list(query.fetch())
     return jsonify(result)
   except Exception as e:
